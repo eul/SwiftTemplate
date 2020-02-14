@@ -7,3 +7,16 @@
 //
 
 import Foundation
+
+struct Config {
+
+    //Staging
+    static let apiUrl = "https://stagin/some"
+
+    //Live
+    //static let apiUrl = "https://live/some"
+
+    static let apiVersion = "1"
+    static let clientVersion = "1.0"
+
+}

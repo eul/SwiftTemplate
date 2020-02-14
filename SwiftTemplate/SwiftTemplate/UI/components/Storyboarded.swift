@@ -6,4 +6,16 @@
 //  Copyright © 2020 Yevhen Liashenko. All rights reserved.
 //
 
-import Foundation
+import UIKit
+
+protocol Storyboarded { }
+
+extension Storyboarded where Self: UIViewController {
+
+    static func instantiateFrom(storyboard: UIStoryboard) -> Self {
+
+        let storyboardIdentifier = String(describing: self)
+
+        return storyboard.instantiateViewController(withIdentifier: storyboardIdentifier) as! Self
+    }
+}

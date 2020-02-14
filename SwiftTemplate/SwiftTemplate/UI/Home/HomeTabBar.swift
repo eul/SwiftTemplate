@@ -6,4 +6,8 @@
 //  Copyright © 2020 Yevhen Liashenko. All rights reserved.
 //
 
-import Foundation
+import UIKit
+
+final class HomeTabBar: UITabBarController, Storyboarded {
+    
+}
