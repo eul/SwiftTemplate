@@ -43,7 +43,7 @@ class LoginAndSignUpUIRouter {
 
             switch event {
 
-            case .didLogin:
+            case .didLogin(let userInfo):
 
                 UIRouter.instance.setNewRoot(vc: UIRouter.instance.home.homeTabBar())
             }

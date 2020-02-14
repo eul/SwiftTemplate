@@ -46,9 +46,9 @@ class LoginReducer: Reducer {
     private var disposeBag = DisposeBag()
     
     enum RoutingEvent{
-        case didLogin
+        case didLogin(UserInfoResponse)
     }
-    
+
     init(authorizationService: AuthorizationService,
                routingHandler: ((RoutingEvent)->Void)?) {
 
@@ -77,12 +77,14 @@ class LoginReducer: Reducer {
 
     private func login(userName: String, password: String) {
 
-        routingHandler?(.didLogin)
-//        authorizationService.login() {[weak self] logined in
-//            
-//            if logined {
-//                self?.newStateHandler?(LoginState.logined)
-//            }
-//        }
+        
+        authorizationService.getUserInfoWith(userLogin: "eul") {[weak self] userInfo in
+
+            if let userInfo_ = userInfo {
+                self?.routingHandler?(.didLogin(userInfo_))
+            }else {
+                self?.newStateHandler?(.loginWithError)
+            }
+        }
     }
 }

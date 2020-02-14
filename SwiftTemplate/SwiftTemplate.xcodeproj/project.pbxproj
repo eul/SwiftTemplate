@@ -36,6 +36,8 @@
 		C369D1FB23F6CEE300E4862D /* HomeUIRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C369D1FA23F6CEE300E4862D /* HomeUIRouter.swift */; };
 		C369D1FD23F6D10400E4862D /* HomeTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = C369D1FC23F6D10400E4862D /* HomeTabBar.swift */; };
 		C369D1FF23F6D23000E4862D /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C369D1FE23F6D23000E4862D /* Home.storyboard */; };
+		C369D20123F6E94E00E4862D /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = C369D20023F6E94E00E4862D /* API.swift */; };
+		C369D20423F6EA7000E4862D /* UserInfoResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = C369D20323F6EA7000E4862D /* UserInfoResponse.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -85,6 +87,8 @@
 		C369D1FA23F6CEE300E4862D /* HomeUIRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeUIRouter.swift; sourceTree = "<group>"; };
 		C369D1FC23F6D10400E4862D /* HomeTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTabBar.swift; sourceTree = "<group>"; };
 		C369D1FE23F6D23000E4862D /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
+		C369D20023F6E94E00E4862D /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
+		C369D20323F6EA7000E4862D /* UserInfoResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoResponse.swift; sourceTree = "<group>"; };
 		FA54B10CB4365D82B56B0F87 /* Pods-SwiftTemplateTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftTemplateTests.release.xcconfig"; path = "Target Support Files/Pods-SwiftTemplateTests/Pods-SwiftTemplateTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -184,11 +188,13 @@
 		C369D1CD23F6AD9500E4862D /* api */ = {
 			isa = PBXGroup;
 			children = (
+				C369D20223F6EA5F00E4862D /* responses */,
 				C369D1E623F6BE9400E4862D /* extensions */,
 				C369D1E123F6BD4900E4862D /* errors */,
 				C369D1DF23F6B45200E4862D /* Config.swift */,
 				C369D1DB23F6B39000E4862D /* APIClient.swift */,
 				C369D1DD23F6B3D300E4862D /* Endpoint.swift */,
+				C369D20023F6E94E00E4862D /* API.swift */,
 			);
 			path = api;
 			sourceTree = "<group>";
@@ -266,6 +272,14 @@
 				C369D1FA23F6CEE300E4862D /* HomeUIRouter.swift */,
 			);
 			path = Home;
+			sourceTree = "<group>";
+		};
+		C369D20223F6EA5F00E4862D /* responses */ = {
+			isa = PBXGroup;
+			children = (
+				C369D20323F6EA7000E4862D /* UserInfoResponse.swift */,
+			);
+			path = responses;
 			sourceTree = "<group>";
 		};
 		F6E2AB3DE247CB1723E9E700 /* Pods */ = {
@@ -451,6 +465,7 @@
 				C369D1DA23F6B31600E4862D /* AuthorizationService.swift in Sources */,
 				C369D1D523F6B1A200E4862D /* LoginVC.swift in Sources */,
 				C369D1F623F6C83B00E4862D /* StateManager.swift in Sources */,
+				C369D20423F6EA7000E4862D /* UserInfoResponse.swift in Sources */,
 				C369D1EE23F6C59B00E4862D /* ViewState.swift in Sources */,
 				C369D1D223F6B14C00E4862D /* LoginAndSignUpUIRouter.swift in Sources */,
 				C369D1FB23F6CEE300E4862D /* HomeUIRouter.swift in Sources */,
@@ -463,6 +478,7 @@
 				C369D1C923F6AC0700E4862D /* UIRouter.swift in Sources */,
 				C369D1EB23F6BF5500E4862D /* FileStorage.swift in Sources */,
 				C369D1A423F6ABA800E4862D /* AppDelegate.swift in Sources */,
+				C369D20123F6E94E00E4862D /* API.swift in Sources */,
 				C369D1F223F6C7D800E4862D /* EventHandler.swift in Sources */,
 				C369D1FD23F6D10400E4862D /* HomeTabBar.swift in Sources */,
 				C369D1E823F6BEA700E4862D /* URL+ST.swift in Sources */,

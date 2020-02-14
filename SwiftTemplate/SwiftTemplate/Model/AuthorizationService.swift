@@ -34,5 +34,21 @@ final class AuthorizationService {
         //user = fileStorage.getUser()
         //self.apiClient.identityToken = user?.authToken
     }
+    
+    public func getUserInfoWith(userLogin: String, callBack: @escaping ((UserInfoResponse?)->Void)) {
+
+        return apiClient.request(API.GitHub.getUserInfoFor(userName: userLogin))
+                        .observeOn(MainScheduler.instance)
+                        .subscribe(onSuccess: { result in
+
+            callBack(result)
+
+        }, onError: {error in
+
+            //Show error message if needed
+            callBack(nil)
+
+        }).disposed(by: disposeBag)
+    }
 }
 

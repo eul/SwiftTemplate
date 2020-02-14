@@ -11,10 +11,10 @@ import Foundation
 struct Config {
 
     //Staging
-    static let apiUrl = "https://stagin/some"
+    static let apiUrl = "https://api.github.com"
 
     //Live
-    //static let apiUrl = "https://live/some"
+    //static let apiUrl = "https://api.github.com"
 
     static let apiVersion = "1"
     static let clientVersion = "1.0"
