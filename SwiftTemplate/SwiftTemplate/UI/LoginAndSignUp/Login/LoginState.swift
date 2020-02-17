@@ -14,7 +14,7 @@ enum LoginState: ViewState, Equatable {
     case initial
     case loading
     case logined
-    case loginWithError
+    case loginError
 
     enum Event {
         case login(_ userName: String, _ password: String)
@@ -26,7 +26,7 @@ enum LoginState: ViewState, Equatable {
         case (.initial, .initial),
              (.loading, .loading),
              (.logined, .logined),
-             (.loginWithError, .loginWithError):
+             (.loginError, .loginError):
             return true
         default:
             return false
@@ -78,12 +78,12 @@ class LoginReducer: Reducer {
     private func login(userName: String, password: String) {
 
         
-        authorizationService.getUserInfoWith(userLogin: "eul") {[weak self] userInfo in
+        authorizationService.getUserInfoWith(userLogin: userName) {[weak self] userInfo in
 
             if let userInfo_ = userInfo {
                 self?.routingHandler?(.didLogin(userInfo_))
             }else {
-                self?.newStateHandler?(.loginWithError)
+                self?.newStateHandler?(.loginError)
             }
         }
     }

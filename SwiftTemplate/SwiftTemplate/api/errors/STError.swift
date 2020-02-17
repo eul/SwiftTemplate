@@ -30,6 +30,8 @@ class STError: Error {
     }
 }
 
+class BadRequestError: STError {}
+
 class NoInternetError: STError {}
 
 class NewVersionAvailableError: STError {}

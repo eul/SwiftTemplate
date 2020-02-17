@@ -15,7 +15,7 @@ final class ErrorHandler {
 
         stLog(log: "Error in: \(response.request as Any)")
 
-        var snapError = STError()
+        var stError = STError()
 
         let afError = (error as? AFError)
 
@@ -31,7 +31,7 @@ final class ErrorHandler {
         
         if ((error as NSError).code == -1009) || ((error as NSError).code == -1001) {
 
-            snapError = NoInternetError()
+            stError = NoInternetError()
         }
 
         stLog(log:"Unhandled Error: \((error as NSError).code)")
@@ -40,36 +40,27 @@ final class ErrorHandler {
 
             do {
 
-                let dict = String(data: data, encoding: String.Encoding.utf8) as String?
+                let errorResponse = try JSONDecoder().decode(ErrorResponse.self, from: data)
+                
+                return BadRequestError(description: errorResponse.message)
 
-                print(dict as Any)
-
-                if let dict = try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any] {
-
-                    if (afError?.responseCode ?? 0) == 400 {
-                        
-                        guard let _ = dict["error"] as? String,
-                              let description = dict["error_description"] as? String else {
-
-                                return snapError
-                        }
-
-                        return LoginError(description: description)
-                    }
-                }
             }catch {
-
+                return stError
             }
         }
 
-        return snapError
+        return stError
     }
     
     public func handle(error: Error, description: String? = nil) {
         
         DispatchQueue.main.async {
             
-            if error is NoInternetError {
+            if let error_ = error as? BadRequestError {
+                
+                UIRouter.instance.show(message: error_.description())
+
+            } else if error is NoInternetError {
 
                UIRouter.instance.show(message: "It seems there is no internet connection. Please check and try again.")
 

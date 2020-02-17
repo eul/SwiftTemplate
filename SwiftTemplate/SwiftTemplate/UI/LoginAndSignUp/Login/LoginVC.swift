@@ -14,13 +14,19 @@ final class LoginVC: UIViewController, StateViewer, Storyboarded {
 
     typealias State = LoginState
     typealias Event = LoginState.Event
-    
+
+    //AMRK:- Outlets
+    @IBOutlet weak var userNameTF: UITextField!
+
     //MARK:-
     public func render(state: LoginState) {
         
         switch state {
         case .loading:
             UIRouter.instance.showLoading(in: view)
+        case .loginError:
+            UIRouter.instance.dismissLoading()
+            print("login error")
         default:
             UIRouter.instance.dismissLoading()
         }
@@ -29,6 +35,23 @@ final class LoginVC: UIViewController, StateViewer, Storyboarded {
     //MARK:- Actions
     @IBAction func loginAction(_ sender: Any) {
 
-        eventHandler?.handle(event: .login("", ""))
+        if !validate() {
+            return
+        }
+
+        eventHandler?.handle(event: .login(userNameTF.text ?? "", ""))
+    }
+
+    //MARK:- Validation
+    private func validate() -> Bool {
+        
+        if userNameTF.text?.isEmpty ?? true {
+
+            UIRouter.instance.show(message: "User name should be filled!")
+
+            return false
+        }
+
+        return true
     }
 }

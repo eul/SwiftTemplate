@@ -15,9 +15,28 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="github user name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="WS9-X8-VSl">
+                                <rect key="frame" x="20" y="126" width="374" height="32"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="32" id="RLV-ML-Ykg"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SBS-DT-ZsP">
+                                <rect key="frame" x="20" y="160" width="374" height="0.5"/>
+                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="0.5" id="xkU-qX-MD2"/>
+                                </constraints>
+                            </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bIN-z1-0y8">
-                                <rect key="frame" x="188" y="433" width="38" height="30"/>
-                                <state key="normal" title="Login"/>
+                                <rect key="frame" x="97" y="187" width="220" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="220" id="H0m-M6-EEZ"/>
+                                    <constraint firstAttribute="height" constant="44" id="IMy-aA-iFQ"/>
+                                </constraints>
+                                <state key="normal" title="Go"/>
                                 <connections>
                                     <action selector="loginAction:" destination="dsS-Bs-esC" eventType="touchUpInside" id="ynf-9g-qoQ"/>
                                 </connections>
@@ -25,13 +44,22 @@
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
+                            <constraint firstItem="WS9-X8-VSl" firstAttribute="leading" secondItem="EG1-om-RqX" secondAttribute="leading" constant="20" id="2ye-Kw-q9Y"/>
+                            <constraint firstItem="SBS-DT-ZsP" firstAttribute="trailing" secondItem="WS9-X8-VSl" secondAttribute="trailing" id="6HZ-f2-m60"/>
                             <constraint firstItem="bIN-z1-0y8" firstAttribute="centerX" secondItem="EG1-om-RqX" secondAttribute="centerX" id="CuI-kh-Ufg"/>
-                            <constraint firstItem="bIN-z1-0y8" firstAttribute="centerY" secondItem="EG1-om-RqX" secondAttribute="centerY" id="zhH-ee-vmo"/>
+                            <constraint firstItem="bIN-z1-0y8" firstAttribute="top" secondItem="SBS-DT-ZsP" secondAttribute="bottom" constant="26.5" id="UJx-qB-CS7"/>
+                            <constraint firstItem="SBS-DT-ZsP" firstAttribute="leading" secondItem="WS9-X8-VSl" secondAttribute="leading" id="Uim-0e-cZA"/>
+                            <constraint firstItem="SBS-DT-ZsP" firstAttribute="top" secondItem="WS9-X8-VSl" secondAttribute="bottom" constant="2" id="e5D-F1-tFK"/>
+                            <constraint firstItem="WS9-X8-VSl" firstAttribute="top" secondItem="XEj-uI-Tgk" secondAttribute="top" constant="38" id="iPh-WH-1KJ"/>
+                            <constraint firstAttribute="trailing" secondItem="WS9-X8-VSl" secondAttribute="trailing" constant="20" id="pkB-kE-qtz"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="XEj-uI-Tgk"/>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout" top="YES"/>
                     <navigationItem key="navigationItem" id="Ibd-jW-Ydt"/>
+                    <connections>
+                        <outlet property="userNameTF" destination="WS9-X8-VSl" id="ty9-OT-tjf"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dgV-21-oMM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
