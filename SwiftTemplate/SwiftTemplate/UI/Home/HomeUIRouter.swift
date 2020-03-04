@@ -28,13 +28,15 @@ final class HomeUIRouter {
 
         tabBar.viewControllers?.forEach({ vc in
             
-//            if let naVC = vc as? NewsNavVC {
-//
-//                let vc = naVC.viewControllers.first as! NewsVC
-//
-//                //menuVC.router  = mainRouter
-//                vc.session = session
-//            }
+            if let naVC = vc as? RepositoriesNavVC {
+
+                guard let vc = naVC.viewControllers.first as? RepositoriesVC else {
+                    //log error
+                    return
+                }
+
+                UIRouter.instance.repos.setupRepositoriesReduxModuleFor(reposVC: vc)
+            }
 //
 //            if let naVC = vc as? FoodNavVC {
 //

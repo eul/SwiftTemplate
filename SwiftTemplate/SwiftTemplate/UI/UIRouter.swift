@@ -18,6 +18,22 @@ class UIRouter {
 
     public static var instance: UIRouter!
     
+    public lazy var loginAndSignUp: LoginAndSignUpUIRouter = {
+
+        return LoginAndSignUpUIRouter(mainRouter: self, session: session)
+    }()
+
+    public lazy var home: HomeUIRouter = {
+
+        return HomeUIRouter(mainRouter: self, session: session)
+    }()
+    
+    public lazy var repos: RepositoriesUIRouter = {
+
+        return RepositoriesUIRouter(mainRouter: self, session: session)
+    }()
+
+    //MARK:-
     init(session :Session) {
         
         self.session = session
@@ -64,16 +80,8 @@ class UIRouter {
         setNewRoot(vc: vc)
     }
 
-    public lazy var loginAndSignUp: LoginAndSignUpUIRouter = {
-
-        return LoginAndSignUpUIRouter(mainRouter: self, session: session)
-    }()
-
-    public lazy var home: HomeUIRouter = {
-
-        return HomeUIRouter(mainRouter: self, session: session)
-    }()
     
+
     //MARK:- Loading
     private var hud: MBProgressHUD?
 

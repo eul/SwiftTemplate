@@ -7,9 +7,11 @@
 //
 
 import Foundation
+
 final class Session {
 
     public let authorizationService: AuthorizationService
+    public let reposService: ReposService
 
     private var apiClient: APIClient!
 
@@ -18,8 +20,9 @@ final class Session {
         apiClient = APIClient(accessToken: nil)
 
         authorizationService = AuthorizationService(apiClient: apiClient)
+        reposService = ReposService(apiClient: apiClient)
     }
-//
+
 //    public func logout() {
 //        
 //        authorizationService.user = nil

@@ -3,7 +3,6 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
-        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -13,32 +12,27 @@
                 <tabBarController storyboardIdentifier="HomeTabBar" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="lNZ-Wi-Sq5" customClass="HomeTabBar" customModule="SwiftTemplate" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="COq-hN-FWa">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
-                        <segue destination="62b-gb-KMt" kind="relationship" relationship="viewControllers" id="iFM-zl-4HH"/>
+                        <segue destination="AuR-kO-rO3" kind="relationship" relationship="viewControllers" id="UDo-H9-fYw"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="T4O-8Y-ZTl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="179.71014492753625" y="164.73214285714286"/>
         </scene>
-        <!--Item-->
-        <scene sceneID="Luu-fU-g3z">
+        <!--RepositoriesNavVC-->
+        <scene sceneID="pta-IJ-PeJ">
             <objects>
-                <viewController id="62b-gb-KMt" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="Fbp-Yf-F3Y">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <viewLayoutGuide key="safeArea" id="M8n-UR-xSb"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="r3T-Vk-ta2"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="rvn-4i-iAX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <viewControllerPlaceholder storyboardName="Repositories" referencedIdentifier="RepositoriesNavVC" id="AuR-kO-rO3" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="WEb-Dy-4Ih"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1WG-vZ-4ss" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1086" y="166"/>
+            <point key="canvasLocation" x="834" y="-127"/>
         </scene>
     </scenes>
 </document>

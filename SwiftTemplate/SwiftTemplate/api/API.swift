@@ -21,5 +21,11 @@ extension API {
            return Endpoint(method: .get,
                              path: "/users/\(userName)")
         }
+
+        static func getReposFor(userName: String) -> Endpoint<[UserRepoResponse]> {
+
+           return Endpoint(method: .get,
+                             path: "/users/\(userName)/repos")
+        }
     }
 }
