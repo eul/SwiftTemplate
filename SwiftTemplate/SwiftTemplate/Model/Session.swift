@@ -20,7 +20,7 @@ final class Session {
         apiClient = APIClient(accessToken: nil)
 
         authorizationService = AuthorizationService(apiClient: apiClient)
-        reposService = ReposService(apiClient: apiClient)
+        reposService = ReposService(apiClient: apiClient, authService: authorizationService)
     }
 
 //    public func logout() {

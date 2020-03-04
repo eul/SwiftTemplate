@@ -18,7 +18,7 @@ enum RepositoriesState: ViewState, Equatable {
     case repositories([UserRepoResponse])
 
     enum Event {
-        case login(_ userName: String, _ password: String)
+        case loadData
     }
 
     static func == (lhs: RepositoriesState, rhs: RepositoriesState) -> Bool {
@@ -32,6 +32,58 @@ enum RepositoriesState: ViewState, Equatable {
             return lRepos == rRepos
         default:
             return false
+        }
+    }
+}
+
+class RepositoriesReducer: Reducer {
+
+    typealias State = RepositoriesState
+    typealias Event = RepositoriesState.Event
+
+    public var newStateHandler: ((RepositoriesState) -> Void)?
+
+    private let reposService: ReposService
+    private let routingHandler: ((RoutingEvent)->Void)?
+    private var disposeBag = DisposeBag()
+    
+    enum RoutingEvent{
+        case showDetails
+    }
+
+    init(reposService: ReposService,
+       routingHandler: ((RoutingEvent)->Void)?) {
+
+        self.reposService = reposService
+        self.routingHandler = routingHandler
+    }
+
+    func reduce(state: RepositoriesState, event: RepositoriesState.Event) -> RepositoriesState {
+
+        var newState = state
+
+        switch (state, event) {
+        case (_, .loadData):
+
+            newState = .loading
+
+            loadData()
+
+        default:
+
+            fatalError()
+        }
+
+        return newState
+    }
+
+    private func loadData() {
+
+        reposService.getRepos() {[weak self] repos in
+
+            print(repos)
+
+            self?.newStateHandler?(.repositories(repos))
         }
     }
 }

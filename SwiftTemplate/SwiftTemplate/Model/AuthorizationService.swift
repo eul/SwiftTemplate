@@ -15,6 +15,7 @@ final class AuthorizationService {
     private let fileStorage = FileStorage()
     private var disposeBag  = DisposeBag()
 
+    public var userLogin: String?
 //    public var user :UserData? {
 //        didSet{
 //            if let user_ = user {
@@ -39,7 +40,9 @@ final class AuthorizationService {
 
         return apiClient.request(API.GitHub.getUserInfoFor(userName: userLogin))
                         .observeOn(MainScheduler.instance)
-                        .subscribe(onSuccess: { result in
+                        .subscribe(onSuccess: {[weak self] result in
+
+            self?.userLogin = userLogin
 
             callBack(result)
 

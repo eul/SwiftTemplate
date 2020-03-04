@@ -46,6 +46,7 @@
 		C3C7C4A7240FE88800DA0FE2 /* RepositoriesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3C7C4A6240FE88800DA0FE2 /* RepositoriesVC.swift */; };
 		C3C7C4AA240FEB8100DA0FE2 /* RepositoriesNavVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3C7C4A9240FEB8100DA0FE2 /* RepositoriesNavVC.swift */; };
 		C3C7C4AC240FEFFD00DA0FE2 /* RepositoriesState.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3C7C4AB240FEFFD00DA0FE2 /* RepositoriesState.swift */; };
+		C3C7C4AE2410112900DA0FE2 /* RepositoryTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3C7C4AD2410112900DA0FE2 /* RepositoryTableCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -105,6 +106,7 @@
 		C3C7C4A6240FE88800DA0FE2 /* RepositoriesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoriesVC.swift; sourceTree = "<group>"; };
 		C3C7C4A9240FEB8100DA0FE2 /* RepositoriesNavVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoriesNavVC.swift; sourceTree = "<group>"; };
 		C3C7C4AB240FEFFD00DA0FE2 /* RepositoriesState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoriesState.swift; sourceTree = "<group>"; };
+		C3C7C4AD2410112900DA0FE2 /* RepositoryTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryTableCell.swift; sourceTree = "<group>"; };
 		FA54B10CB4365D82B56B0F87 /* Pods-SwiftTemplateTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftTemplateTests.release.xcconfig"; path = "Target Support Files/Pods-SwiftTemplateTests/Pods-SwiftTemplateTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -318,6 +320,7 @@
 			isa = PBXGroup;
 			children = (
 				C3C7C4A9240FEB8100DA0FE2 /* RepositoriesNavVC.swift */,
+				C3C7C4AD2410112900DA0FE2 /* RepositoryTableCell.swift */,
 			);
 			path = details;
 			sourceTree = "<group>";
@@ -531,6 +534,7 @@
 				C369D1F423F6C81600E4862D /* Reducer.swift in Sources */,
 				C3C7C4A3240FE82D00DA0FE2 /* RepositoriesUIRouter.swift in Sources */,
 				C369D1E523F6BDBE00E4862D /* ErrorHandler.swift in Sources */,
+				C3C7C4AE2410112900DA0FE2 /* RepositoryTableCell.swift in Sources */,
 				C369D1F023F6C5EE00E4862D /* CustomLogDescriptionConvertible.swift in Sources */,
 				C369D1DE23F6B3D300E4862D /* Endpoint.swift in Sources */,
 				C3C7C4A7240FE88800DA0FE2 /* RepositoriesVC.swift in Sources */,

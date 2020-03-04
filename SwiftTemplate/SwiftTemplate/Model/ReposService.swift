@@ -13,15 +13,19 @@ final class ReposService {
 
     private let apiClient :APIClient!
     private var disposeBag  = DisposeBag()
+    private weak var authService: AuthorizationService?
     
-    init(apiClient: APIClient) {
+    init(apiClient: APIClient, authService: AuthorizationService) {
 
-        self.apiClient = apiClient
+        self.apiClient   = apiClient
+        self.authService = authService
     }
     
-    public func getReposFor(userName: String, callBack: @escaping (([UserRepoResponse])->Void)) {
+    public func getRepos(callBack: @escaping (([UserRepoResponse])->Void)) {
 
-        return apiClient.request(API.GitHub.getReposFor(userName: userName))
+        guard let userLogin = authService?.userLogin else { return }
+
+        return apiClient.request(API.GitHub.getReposFor(userName: userLogin))
                         .observeOn(MainScheduler.instance)
                         .subscribe(onSuccess: { result in
 

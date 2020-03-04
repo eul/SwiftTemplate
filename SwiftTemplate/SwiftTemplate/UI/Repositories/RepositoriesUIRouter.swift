@@ -24,21 +24,14 @@ class RepositoriesUIRouter {
     
     public func setupRepositoriesReduxModuleFor(reposVC: RepositoriesVC) {
 
-//        let routingHandler: ((LoginReducer.RoutingEvent)->Void) = { event in
-//
-//            switch event {
-//
-//            case .didLogin(let userInfo):
-//
-//                UIRouter.instance.setNewRoot(vc: UIRouter.instance.home.homeTabBar())
-//            }
-//        }
-//
-//        let reducer = LoginReducer(authorizationService: session.authorizationService,
-//                                         routingHandler: routingHandler)
-//
-//        _ = StateManager(state: .initial,
-//                       reducer: reducer,
-//                   stateViewer: loginVC)
+        let routingHandler: ((RepositoriesReducer.RoutingEvent)->Void) = { event in
+
+        }
+
+        let reducer = RepositoriesReducer(reposService: session.reposService, routingHandler: routingHandler)
+
+        _ = StateManager(state: .initial,
+                       reducer: reducer,
+                   stateViewer: reposVC)
     }
 }
